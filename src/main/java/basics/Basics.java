@@ -6,7 +6,6 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
 
-
 public class Basics {
     public static void main(String[] args) {
         try (Playwright playwright = Playwright.create()) {
