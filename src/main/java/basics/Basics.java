@@ -4,9 +4,8 @@ import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
+
 public class Basics {
     public static void main(String[] args) {
         try (Playwright playwright = Playwright.create()) {
