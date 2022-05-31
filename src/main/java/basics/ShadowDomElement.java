@@ -3,7 +3,7 @@ package basics;
 import com.microsoft.playwright.*;
 
 public class ShadowDomElement {
-    private static final String URL_ADDRESS_1 = "http://bookS-pwakit.appspot.com/";
+    private static final String URL_ADDRESS_1 = "http://books-pwakit.appspot.com/";
     private static final String URL_ADDRESS_2 = "https://selectorshub.com/xpath-practice-page/";
 
     public static void main(String[] args) {
