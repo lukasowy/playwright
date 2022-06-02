@@ -19,7 +19,8 @@ public class RelativeLocators {
             selectUser("Joe.Root");
             selectUser("Jasmine.Morgan");
 
-            page.locator("td:right-of(:text('Joe.Root'))").first().textContent();
+            String userRole = getUserRole("Joe.Root");
+            System.out.println(userRole);
 
             page.close();
             browserContext.close();
@@ -28,5 +29,9 @@ public class RelativeLocators {
 
     public static void selectUser(String userName) {
         page.locator("input[type='checkbox']:left-of(:text('" + userName + "'))").first().click();
+    }
+
+    public static String getUserRole(String userName) {
+        return page.locator("td:right-of(:text('" + userName + "'))").first().textContent();
     }
 }
