@@ -19,6 +19,8 @@ public class RelativeLocators {
             selectUser("Joe.Root");
             selectUser("Jasmine.Morgan");
 
+            page.locator("td:right-of(:text('Joe.Root'))").first().textContent();
+
             page.close();
             browserContext.close();
         }
