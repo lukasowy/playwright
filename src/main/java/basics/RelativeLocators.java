@@ -22,6 +22,12 @@ public class RelativeLocators {
             String userRole = getUserRole("Joe.Root");
             System.out.println(userRole);
 
+            String aboveUser = page.locator("a:above(:text('Joe.Root'))").first().textContent();
+            System.out.println(aboveUser);
+
+            String belowUser = page.locator("a:below(:text('Joe.Root'))").first().textContent();
+            System.out.println(belowUser);
+            
             page.close();
             browserContext.close();
         }
