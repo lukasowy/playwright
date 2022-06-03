@@ -30,13 +30,15 @@ public class RelativeLocators {
             String belowUser = getUserNameBelow("Joe.Root");
             System.out.println(belowUser);
 
-            Locator nearLocator = page.locator("td:near(:text('Joe.Root'),120)");
-            List<String> nearElementTexts = nearLocator.allInnerTexts();
-            nearElementTexts.forEach(System.out::println);
+            getAllElementsNearUserName("Joe.Root").forEach(System.out::println);
 
             page.close();
             browserContext.close();
         }
+    }
+
+    private static List<String> getAllElementsNearUserName(String userName) {
+        return page.locator("td:near(:text('" + userName + "'))").allInnerTexts();
     }
 
     private static String getUserNameAbove(String userName) {
