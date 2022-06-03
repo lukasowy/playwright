@@ -2,6 +2,8 @@ package basics;
 
 import com.microsoft.playwright.*;
 
+import java.util.List;
+
 public class RelativeLocators {
 
     private static final String URL_ADDRESS = "https://selectorshub.com/xpath-practice-page/";
@@ -27,6 +29,10 @@ public class RelativeLocators {
 
             String belowUser = getUserNameBelow("Joe.Root");
             System.out.println(belowUser);
+
+            Locator nearLocator = page.locator("td:near(:text('Joe.Root'),120)");
+            List<String> nearElementTexts = nearLocator.allInnerTexts();
+            nearElementTexts.forEach(System.out::println);
 
             page.close();
             browserContext.close();
