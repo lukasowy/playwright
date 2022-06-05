@@ -14,6 +14,7 @@ public class XpathLocator {
             page.navigate(URL_ADDRESS);
 
             page.locator("xpath=//input[@id='twotabsearchtextbox']").fill("Android");
+            page.locator("//input[@id='twotabsearchtextbox']").fill("Tablet");
 
             page.close();
             browserContext.close();
