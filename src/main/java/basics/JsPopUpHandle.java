@@ -13,6 +13,7 @@ public class JsPopUpHandle {
 
             //Js Alerts, Prompts, Confirmation pop ups
             page.click("//button[text()='Click for JS Alert']");
+            page.click("//button[text()='Click for JS Confirm']");
 
             String result = page.textContent("#result");
             System.out.println(result);
