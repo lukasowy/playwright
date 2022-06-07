@@ -9,6 +9,13 @@ public class JsPopUpHandle {
 
             BrowserContext browserContext = browser.newContext();
             Page page = browserContext.newPage();
+            page.navigate("https://the-internet.herokuapp.com/javascript_alerts");
+
+            //Js Alerts, Prompts, Confirmation pop ups
+            page.click("//button[text()='Click for JS Alert']");
+
+            String result = page.textContent("#result");
+            System.out.println(result);
 
 
             page.close();
