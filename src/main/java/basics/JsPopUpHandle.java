@@ -9,6 +9,13 @@ public class JsPopUpHandle {
 
             BrowserContext browserContext = browser.newContext();
             Page page = browserContext.newPage();
+
+            page.onDialog(dialog -> {
+                String message = dialog.message();
+                System.out.println(message);
+                dialog.accept();
+            });
+
             page.navigate("https://the-internet.herokuapp.com/javascript_alerts");
 
             //Js Alerts, Prompts, Confirmation pop ups
