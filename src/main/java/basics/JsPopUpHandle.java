@@ -13,7 +13,7 @@ public class JsPopUpHandle {
             page.onDialog(dialog -> {
                 String message = dialog.message();
                 System.out.println(message);
-                dialog.accept();
+                dialog.accept("Maniek");
             });
 
             page.navigate("https://the-internet.herokuapp.com/javascript_alerts");
@@ -21,6 +21,7 @@ public class JsPopUpHandle {
             //Js Alerts, Prompts, Confirmation pop ups
             page.click("//button[text()='Click for JS Alert']");
             page.click("//button[text()='Click for JS Confirm']");
+            page.click("//button[text()='Click for JS Prompt']");
 
             String result = page.textContent("#result");
             System.out.println(result);
