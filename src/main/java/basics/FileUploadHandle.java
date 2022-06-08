@@ -9,7 +9,9 @@ public class FileUploadHandle {
 
             BrowserContext browserContext = browser.newContext();
             Page page = browserContext.newPage();
-            
+            page.navigate("https://davidwalsh.name/demo/multile-file-upload.php");
+
+
             page.close();
             browserContext.close();
         }
