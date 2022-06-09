@@ -16,7 +16,7 @@ public class DownloadFile {
             Download download = page.waitForDownload(() -> {
                 page.click("a:text('chromedriver_mac64.zip')");
             });
-            
+
             System.out.println(download.failure());
 
             System.out.println(download.url());
