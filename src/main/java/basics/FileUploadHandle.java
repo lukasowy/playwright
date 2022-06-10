@@ -1,6 +1,9 @@
 package basics;
 
 import com.microsoft.playwright.*;
+import com.microsoft.playwright.options.FilePayload;
+
+import java.nio.charset.StandardCharsets;
 
 public class FileUploadHandle {
     public static void main(String[] args) {
@@ -9,8 +12,13 @@ public class FileUploadHandle {
 
             BrowserContext browserContext = browser.newContext();
             Page page = browserContext.newPage();
-            page.navigate("https://davidwalsh.name/demo/multile-file-upload.php");
+            page.navigate("https://cgi-lib.berkeley.edu/ex/fup.html");
 
+            page.setInputFiles("input[name='upfile']", new FilePayload("naveen.text",
+                    "text/plain",
+                    "this is naveen here".getBytes(StandardCharsets.UTF_8)));
+
+            page.click("input[value='Press']");
 
             page.close();
             browserContext.close();
