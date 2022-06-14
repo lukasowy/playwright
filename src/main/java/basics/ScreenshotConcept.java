@@ -16,7 +16,7 @@ public class ScreenshotConcept {
             page.screenshot(new Page.ScreenshotOptions()
                     .setPath(Paths.get("screenshotpage.png"))
                     .setFullPage(true));
-            
+
             page.close();
             browserContext.close();
         }
